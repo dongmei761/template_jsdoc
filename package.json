@@ -1,0 +1,19 @@
+{
+  "name": "default_new",
+  "version": "0.0.0",
+  "description": "template for jsdoc by dongmei",
+  "main": "publish.js",
+  "scripts": {
+    "test": "jsdoc --help"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://git.baidu.com/zhangdongmei01/template-jsdoc"
+  },
+  "keywords": [
+    "jsdoc",
+    "template"
+  ],
+  "author": "zhangdongmei",
+  "license": "ISC"
+}

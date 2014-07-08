@@ -1,0 +1,15 @@
+<?js
+var data = obj;
+var self = this;
+?>
+<dt>
+    <h4 class="name">
+        <a href="#<?js= id ?>">
+            <?js= data.attribs + (kind === 'class' ? 'new ' : '') + name + (kind !== 'event' ? data.signature : '') ?>
+        </a>
+    </h4>
+    
+    <?js if (data.description) { ?>
+    <p class="summary"><?js= data.description ?></p>
+    <?js } ?>
+</dt>

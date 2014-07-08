@@ -1,0 +1,31 @@
+<?js
+var data = obj;
+var self = this;
+?>
+
+<?js if (data.kind === 'package') { ?>
+    <h3><?js= data.name ?> <?js= data.version ?></h3>
+<?js } ?>
+
+<?js if (data.readme) { ?>
+    <section>
+        <article><?js= data.readme ?></article>
+    </section>
+<?js } ?>
+<?js if(data.summaryData){?>
+    <section>
+        <?js for(var i in data.summaryData){
+            var flag=1;
+            for(var j in data.summaryData[i]){
+                if(flag==1){
+        ?>
+            <?js if(i.indexOf(".")!=-1){?>&nbsp;&nbsp;<?js}?><a class="summary_main" href="<?js= data.summaryData[i][j].parentUrl?>"><?js=i?></a><br/>
+        <?js
+                }
+                flag++;
+                var url=data.summaryData[i][j].parentUrl+"#"+data.summaryData[i][j].id;
+        ?>
+            <?js if(i.indexOf(".")!=-1){?>&nbsp;&nbsp;&nbsp;&nbsp;<?js}else{?>&nbsp;&nbsp;<?js}?><a href="<?js= url ?>" class="summary_sub"><?js=data.summaryData[i][j].longname?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><?js=data.summaryData[i][j].desc?></span><br/>
+        <?js}}?>
+    </section>
+<?js}?>
